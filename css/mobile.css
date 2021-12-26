@@ -10,3 +10,837 @@
 --magic-mint: #98f5e1ff;
 --celadon: #b9fbc0ff;
 */
+/*----------------------- FONTS --------------------------*/
+/*
+    font-family: 'Orbitron', sans-serif;        --- nav
+    font-family: 'Gemunu Libre', sans-serif;    --- footer
+    font-family: 'Audiowide', cursive;          --- titles
+    */
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+h1,h2,h3{
+   color: #3a3a3a;
+}
+header h1{
+    color: white;
+}
+header,
+footer,
+footer a {
+    text-align: center;
+    background-color: rgb(71, 84, 85);
+    color: whitesmoke;
+
+}
+
+header img {
+    margin: .5em;
+    width: 10em;
+    height: auto;
+    float: right;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .5em;
+    font-size: x-small;
+}
+
+.hLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hRight a {
+    margin-right: .5em;
+    color: #a3c4f3ff;
+    font-size: large;
+}
+
+#welcomeMessage:hover {
+    color: lightseagreen;
+}
+
+#logout:hover {
+    color: coral;
+}
+
+#myaccount:hover {
+    color: lightseagreen;
+}
+
+#logo {
+    width: 60px;
+}
+
+.navigation {
+    list-style: none;
+    text-align: center;
+    background-color: #546a76;
+    display: flex;
+    flex-direction: column
+}
+
+.navigation li:first-child {
+    display: block;
+    background-color: #cfbaf0ff;
+}
+
+.navigation li:first-of-type a {
+    color: #546a76;
+}
+
+.navigation li {
+    display: block
+}
+
+.navigation a {
+    display: block;
+    color: #fff;
+    padding: .7rem;
+    text-align: left;
+    padding-left: 1em;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Orbitron';
+}
+
+.navigation a:hover {
+    color: #191919;
+    background-color: #a3c4f3ff;
+    font-weight: 700
+}
+
+.responsive li {
+    display: none
+}
+
+.navigation .active {
+    background-color: #05eeeb;
+    color: brown
+}
+
+main h1 {
+    font-size: large;
+    color: #3a3a3a;
+    margin: 1em 1em;
+}
+
+/* *************** LOGIN & REGISTER VIEWS ************** */
+
+.login-view,
+.register-view {
+    margin-left: 1em;
+}
+.login-view hr{
+    width: 95%;
+}
+.login-view section:nth-of-type(1){
+    border-left:#fbf8ccff 5px solid;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+.login-view section:nth-of-type(2){
+    border-left:#90dbf4ff 5px solid;
+    padding-left: 1em;
+}
+.login-form label,
+.register-view label {
+    font-size: x-large;
+}
+
+.login-form input{
+    border-left:#fbf8ccff 5px solid;
+    padding: .3em .5em;
+    font-size: larger;
+    margin-bottom: .5em;
+}
+.register-form input{
+    border-left:#90dbf4ff 5px solid;
+    padding: .3em .5em;
+    font-size: larger;
+    margin-bottom: .5em;
+}
+#passwordWarning {
+    color: crimson;
+}
+.hint{
+    color: teal;
+}
+
+.login-submit{
+    border: none;
+    background-color: #fbf8ccff;
+    color: #3a3a3a;
+    font-weight: 900;
+    border-radius: 5px;
+    box-shadow: #546a76 3px 2px;
+}
+.reg {
+    border: none;
+    background-color: #90dbf4ff;
+    color: #3a3a3a;
+    font-weight: 900;
+    border-radius: 5px;
+    box-shadow: #546a76 3px 2px;
+}
+
+.login-submit:hover,
+.reg:hover {
+    background-color: #cfbaf0ff;
+    color: #3a3a3a;
+}
+
+.register-button {
+    font-size: larger;
+    padding: .3em .5em;
+    font-weight: 900;
+    background-color: #90dbf4ff;
+    color: #3a3a3a;
+    margin-bottom: .5em;
+    border-radius: 5px;
+    box-shadow: #546a76 3px 2px;
+}
+
+.register-button:hover {
+    background-color: #cfbaf0ff;
+    color: #3a3a3a;
+}
+
+.register-view a {
+    display: inline-block;
+    margin-top: 1em;
+    text-decoration: none;
+    font-size: x-large;
+    background-color: teal;
+    padding: .2em .3em;
+    color: white;
+    border-radius: 5px;
+    box-shadow: #546a76 3px 2px;
+}
+
+.register-view a:hover {
+    background-color: #4c96d7;
+    color: white;
+}
+
+/* *************500error********** */
+.error500 {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.error500 h1 {
+    color: crimson;
+}
+
+/* ************ Admin-view ******** */
+.admin-view {
+    margin-left: 1em;
+}
+
+.admin-view h1 {
+    margin-left: 0;
+}
+
+.admin-view ul li {
+    list-style: none;
+}
+
+.admin-view section {
+    margin-top: 1em;
+    padding-left: 1em;
+}
+
+.admin-view section:nth-child(1) {
+    border-left: #fbf8ccff 5px solid;
+}
+
+.admin-view section:nth-child(2) {
+    border-left: #ffcfd2ff 5px solid;
+}
+
+.admin-view section:nth-child(3) {
+    border-left: #f1c0e8ff 5px solid;
+}
+
+.admin-view section:nth-child(4) {
+    border-left: #b9fbc0ff 5px solid;
+}
+
+.lc a{
+    text-decoration: none;
+    font-size: larger;
+    color: #4c96d7;
+}
+
+.lc a:hover {
+    color: lightseagreen;
+}
+
+
+.reviewUpdLink,
+.reviewDelLink {
+    margin-left: 1em;
+    color: #4c96d7;
+    font-size: larger;
+}
+
+.reviewUpdLink:hover {
+    color: goldenrod;
+}
+
+.reviewDelLink:hover {
+    color: crimson;
+}
+.reviewedDate{
+    color: #546a76;
+}
+.gridview {
+    display: grid;
+}
+
+.adminVLink {
+    text-decoration: none;
+    color: #4c96d7;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.adminVLink:hover {
+    color: coral;
+}
+
+/* ************ Account Management *********** */
+.clientUpdate{
+margin-left: 1em;
+}
+.clientUpdate section:nth-of-type(1){
+    border-left:#f1c0e8ff 5px solid;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+.clientUpdate section:nth-of-type(1) input{
+        border-left:#f1c0e8ff 5px solid;
+}
+.clientUpdate section:nth-of-type(1) input:nth-of-type(3){
+    border: none;
+}
+.clientUpdate section:nth-of-type(2){
+    border-left:#98f5e1ff 5px solid;
+    padding-left: 1em;
+}
+.clientUpdate section:nth-of-type(2) input{
+    border-left:#98f5e1ff 5px solid;
+}
+.clientUpdate section:nth-of-type(2) input:nth-of-type(2){
+    border: none;
+}
+.clientUpdate-form input{
+font-size: large;
+padding: .2em .5em;
+}
+.updClient1{
+    background-color:#f1c0e8ff;
+    border-radius: 4px;
+    box-shadow: #546a76 3px 2px;
+}
+.updClient2{
+    background-color:#98f5e1ff;
+    border-radius: 4px;
+    box-shadow: #546a76 3px 2px;
+}
+.updClient1:hover, .updClient2:hover{
+    background-color: #4c96d7;
+    color: white;
+}
+/* ******** Poetry management ************ */
+.poetryManagement{
+    margin-left: 1em;
+}
+.poetryManagement section:nth-of-type(1){
+    border-left: #a3c4f3ff 5px solid;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+.poetryManagement section:nth-of-type(2){
+    border-left: #cfbaf0ff 5px solid;
+    padding-left: 1em;
+}
+.poetryManagement section:nth-of-type(1) a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+    background-color: #4c96d7;
+    border-radius: 5px;
+    padding:.2em .3em;
+    margin-bottom: .3em;
+    box-shadow: #546a76 3px 2px;
+}
+
+.poetryManagement section:nth-of-type(1) a:hover {
+    color: white;
+    background-color: teal;
+}
+.poetryManagement select {
+    background-color: #cfbaf0ff;
+    font-size: large;
+    border-radius: 5px;
+    padding: .2em .3em;
+    box-shadow: #546a76 3px 2px;
+}
+#poemsDisplay{
+    border-left: #cfbaf0ff 5px solid;
+    padding-left: 1em; 
+}
+.tabPoem{
+    border-bottom: #cfbaf0ff 3px solid;
+    width: fit-content;
+}
+.tabPoemN{
+font-size: large;
+margin: 0;
+}
+.tabPoemU a,.tabPoemD a{
+    margin-left: .5em;
+    text-decoration: none;
+    color: #4c96d7;
+    font-size: large;
+}
+.tabPoemU a:hover{
+    color: goldenrod;
+}
+.tabPoemD a:hover{
+    color: crimson;
+}
+/* ******* addClassification ********** */
+.addClassification div{
+    margin-left: 1em;
+    border-left:#98f5e1ff 5px solid ;
+    padding-left: 1em;
+}
+.addClassification form label{
+    color: #3a3a3a;
+    font-size: large;
+}
+.addClassification form input{
+    padding: .2em .3em;
+    font-size: large;
+    border-left:#98f5e1ff 3px solid ;
+    margin-bottom: 1em;
+}
+#addClassification{
+    border: none;
+    margin-bottom: 0;
+    background-color:#98f5e1ff;
+    border-radius: 4px;
+    padding: .2em .5em;
+    box-shadow: #546a76 3px 2px;
+}
+#addClassification:hover{
+    background-color: #4c96d7;
+    color: white;
+}
+/* ******* Add Poem ******* */
+.addPoem div{
+    margin-left: 1em;
+    border-left:#f1c0e8ff 5px solid ;
+    padding-left: 1em;
+}
+.addPoem form label{
+    color: #3a3a3a;
+    font-size: large;
+}
+.addPoem form select {
+    background-color: #f1c0e8ff;
+    font-size: large;
+    padding: .2em .3em;
+    border-radius: 5px;
+}
+.addPoem form input{
+    padding: .2em .3em;
+    font-size: large;
+    border-left:#f1c0e8ff 5px solid ;
+    margin-bottom: 1em;
+}
+.addPoem textarea{
+    height: 10em;
+    width: 95%;
+}
+#addPoem{
+    border: none;
+    margin-bottom: 0;
+    background-color:#f1c0e8ff;
+    box-shadow: #9cadce 3px 3px;
+    border-radius: 4px;
+}
+#addPoem:hover{
+    background-color: #4c96d7;
+    color: white;
+}
+
+/* ************** reviews ************** */
+.review {
+    margin-left: 1em;
+}
+.reviewRev{
+    padding-left: 1em;
+    color: white;
+}
+
+.review h2 {
+    font-family: 'Audiowide', cursive;
+    color: #3a3a3a;
+    font-size: 1.2em;
+}
+
+#noreviews {
+    color: crimson;
+    font-size: large;
+}
+
+#reviewLogin {
+    margin-top: .5em;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: large;
+}
+
+#reviewLogin a {
+    color: #4c96d7;
+    padding-bottom: .5em;
+}
+
+#reviewLogin a:hover {
+    color: #1abc9c;
+}
+
+.reviewsInfo p {
+    margin-right: .5em;
+    background-color: #63717f;
+    padding: .2em 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.reviewsInfo p:nth-of-type(2n) {
+    padding: .5em 1em;
+    background-color: lightgray;
+    border-radius: 0 0 5px 5px;
+    font-size: 1.2em;
+}
+
+.reviewsScreenName {
+    color: #1abc9c;
+}
+
+.reviewsDate {
+    color: lightgoldenrodyellow;
+}
+
+.review h3 {
+    margin-bottom: .5em;
+    color: #3a3a3a;
+    font-size: 1em;
+    font-family: 'Audiowide', cursive;
+}
+
+.review-form label {
+    color: #3a3a3a;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.review-form input:first-of-type {
+    padding: .5em;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: large;
+    font-weight: 500;
+    margin-bottom: .5em;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    border: 2px solid #4c96d7;
+}
+
+.review-form #reviewText {
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    border: 2px solid #4c96d7;
+    width: 95%;
+    height: 8em;
+    padding: .3em;
+    font-size: large;
+}
+
+.reviewedDate {
+    color: darkgoldenrod;
+}
+
+#reviewText {
+    border-radius: 5px;
+    border: 2px solid #4c96d7;
+    padding: .3em;
+    width: 90%;
+    height: 8em;
+    font-size: large;
+}
+
+.flexy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexy a {
+    margin-right: 2em;
+}
+
+.flexyRight {
+    display: flex;
+    justify-content: space-between;
+}
+
+#review-submit {
+    background-color: #9cadce;
+    color: #3a3a3a;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    margin-top: 0.5em;
+    box-shadow: #63717f 2px 3px;
+    border: none;
+    margin-bottom: 1em;
+}
+
+#review-submit:hover {
+    background-color: #4c96d7;
+    color: #ffffff;
+}
+/* ************* Poem Update ************* */
+.poemUpdate-view{
+    margin-left: 2em;
+}
+.poemUpdate-view form{
+    border-left: #98f5e1ff 5px solid;
+    padding-left: 1em;
+}
+.poemUpdate-view form select{
+    border-left: #98f5e1ff 5px solid;
+    font-size: 1.2em;
+    box-shadow: #63717f 2px 3px;
+    padding:.2em .3em;
+    border-radius: 5px;
+}
+.poemUpdate-view form input{
+    font-size: 1.1em;
+    padding: .2em .3em;
+    border-left: #98f5e1ff 4px solid;
+    box-shadow: #63717f 3px 2px;
+    margin-bottom: .5em;
+}
+.poemUpdate-view form textarea{
+    height: 20em;
+    width: 95%;
+    font-size: large;
+    padding: .2em .3em;
+    border-left: #98f5e1ff 4px solid;
+    box-shadow: #63717f 3px 2px;
+}
+#updPoem{
+    border: none;
+    background-color:#98f5e1ff;
+    border-radius: 5px;
+    box-shadow: #63717f 2px 3px;
+}
+#updPoem:hover{
+    background-color: #4c96d7;
+    color: white;
+}
+
+/* *********** Poem View * Poem Content ********* */
+.poemContent{
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+.poemContent p:nth-of-type(2){
+    border-left:#cfbaf0ff 5px solid ;
+    padding-left: 1em;
+    font-size: 1.1em;
+}
+.poemContent p:last-of-type{
+    border-bottom: #546a76 2px solid;
+    width: fit-content;
+}
+
+/* *********upload image * images * need to re-check *********** */
+.failure {
+    font-size: large;
+    color: crimson;
+    margin-bottom: 1em;
+}
+
+.success {
+    font-size: large;
+    color: #1abc9c;
+    margin-bottom: 1em;
+}
+
+#uploadImage {
+    background: teal;
+    cursor: pointer;
+    color: white;
+    padding: .2em .3em;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: x-large;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 2px #3a3a3a;
+    border-radius: 5px;
+    margin-top: .5em;
+}
+
+input[type=file] {
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: large;
+}
+
+input[type=file]:focus:valid {
+    background-color: white;
+}
+
+#image-display {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#image-display img {
+    max-width: 100%;
+    margin-top: 1.5em;
+}
+
+#image-display a {
+    color: #1B5583
+}
+
+#image-display li {
+    list-style-type: none;
+}
+
+input[type=file] {
+    margin-top: .5em;
+    width: 20em;
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+
+.imageUploadView hr {
+    height: 3px;
+    background-color: cadetblue;
+}
+
+
+/* get image button */
+
+#selected {
+    text-transform: uppercase;
+    color: teal;
+    padding: 0 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: .5em;
+    margin-top: .5em;
+    box-shadow: 2px 2px 2px #3a3a3a;
+}
+
+[value="Select File"] {
+    background: teal;
+    cursor: pointer;
+    color: white;
+    padding: 2px 5px;
+    font-family: Trebuchet MS;
+    font-size: large;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #3a3a3a;
+    margin-top: .5em;
+}
+
+[value=getFile]:hover {
+    background: #0aa;
+}
+
+.thumbs {
+    flex-direction: column;
+}
+
+.thumbs img {
+    max-width: 50%;
+    height: 150px;
+}
+
+#thumbsH2 {
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: 1.3em;
+    margin: .5em .5em;
+}
+
+#thumbsHiddenMobile {
+    display: none;
+}
+
+details[open] {
+    animation: spoiler 3s;
+}
+
+@keyframes spoiler {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

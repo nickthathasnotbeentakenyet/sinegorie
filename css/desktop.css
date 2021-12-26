@@ -1,0 +1,32 @@
+@media only screen and (min-width:70em) {
+    .navigation {
+        flex-direction: row
+    }
+
+    .navigation li:first-child {
+        display: none
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    .navigation li a {
+        font-size: large;
+        text-shadow: 1px 1px #000;
+        text-align: center;
+    }
+
+    .navigation a:hover {
+        color: rgb(40, 160, 207);
+        background-color: whitesmoke;
+        text-shadow: none
+    }
+
+    .navigation .active {
+        color: white;
+        background-color: #05eeeb;
+        text-shadow: 1px 1px brown
+    }
+}
