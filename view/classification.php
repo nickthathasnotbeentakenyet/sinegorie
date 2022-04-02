@@ -10,11 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sinegorie/images/logo.png" type="image/x-icon">
 </head>
@@ -29,7 +25,7 @@
                 <?php echo getNavigationBar($classifications); ?>
             </nav>
             <main>
-                <h1>Произведения из раздела <?php echo $classificationName; ?></h1>
+                <h1 class="classificationPageHead">Произведения из раздела <?php echo $classificationName; ?></h1>
                 <?php if (isset($message)) {
                     echo $message;
                 }

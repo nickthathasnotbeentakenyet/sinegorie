@@ -31,11 +31,11 @@ function buildPoemsList(data) {
     dataTable += '<tr><th class="tabPoem">Название произведения</th><td>&nbsp;</td><td>&nbsp;</td></tr>'; 
     dataTable += '</thead>'; 
     // Set up the table body 
-    dataTable += '<tbody>'; 
+    dataTable += '<tbody class="tabgr">'; 
     // Iterate over all poems in the array and put each in a row 
     data.forEach(function (element) { 
      console.log(element.poemId + ", " + element.poemName); 
-     dataTable += `<tr><td class="tabPoemN">\"${element.poemName}\"</td>`; 
+     dataTable += `<tr><td class="tabPoemN"><a href='/sinegorie/poetry?action=poem-view&poemId=${element.poemId}'>\"${element.poemName}\"</a></td>`; 
      dataTable += `<td class=\"tabPoemU\"><a href='/sinegorie/poetry?action=updateEvent&poemId=${element.poemId}' title='Нажмите для изменения'>Изменить</a></td>`; 
      dataTable += `<td class=\"tabPoemD\"><a href='/sinegorie/poetry?action=deleteEvent&poemId=${element.poemId}' title='Нажмите для удаления'>Удалить</a></td></tr>`; 
     }) 

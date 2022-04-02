@@ -29,13 +29,13 @@ switch ($action) {
       $clientId = trim(filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT));
     }
     if (empty($reviewText)) {
-      $message = '<p id="emptyAddClass">Необходимо заполнить поле текста рецензии</p>';
+      $message = '<p class="failure">Необходимо заполнить поле текста рецензии</p>';
       include '../view/poem.php';
       exit;
     } else {
       $outReview = createReview($reviewText, $poemId, $clientId);
       if ($outReview){
-      $message = '<p id="msgSuccess">Рецензия успешно опубликована!</p>';
+      $message = '<p class="success">Рецензия успешно опубликована!</p>';
       }
       $poemInfo = getSpecificPoemInfo($poemId);
       // $thumbnailImages = getThumbnailImage($invId);
@@ -59,7 +59,7 @@ switch ($action) {
     $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
     $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
         if (empty($reviewText)) {
-          $message = '<p id="emptyAddClass">Форма должна быть заполнена!</p>';
+          $message = '<p class="failure">Форма должна быть заполнена!</p>';
           include '../view/review-update.php';
           exit;
         }
@@ -94,7 +94,14 @@ switch ($action) {
     $specReview = getSpecificReview($reviewId);
     $displaySpecReview=buildSpecReviewDisplay($specReview);
     include '../view/review-delete.php';
-    break;    
+    break;  
+    case 'deleteModerView':
+      $poemId = filter_input(INPUT_GET, 'poemId', FILTER_VALIDATE_INT);
+      $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_VALIDATE_INT);
+      $specReview = getSpecificReview($reviewId);
+      $displaySpecReview=buildSpecReviewDisplay($specReview);
+      include '../view/deleteReviewModer-view.php';
+      break;  
   default:
     if (!$_SESSION['loggedin']) {
       header('Location: /sinegorie/');

@@ -37,13 +37,14 @@ if (!$_SESSION['loggedin']) {
             </nav>
             <main class="clientUpdate">
                 <h1>Управление аккаунтом</h1>
-                <section>
-                    <h2>Обновить данные</h2>
-                    <?php
+                <?php
                     if (isset($message)) {
                         echo $message;
                     }
                     ?>
+                <div class="cug">    
+                <section>
+                    <h2>Обновить данные</h2>
                     <form class="clientUpdate-form" action="/sinegorie/accounts/index.php" method="post">
                         <label for="clientLogin">Логин</label><br>
                         <input type="text" name="clientLogin" id="clientLogin" value='<?php if (isset($_SESSION['clientData']['clientLogin'])) {
@@ -84,6 +85,24 @@ if (!$_SESSION['loggedin']) {
                                                                     } ?>">
                     </form>
                 </section>
+                <section>
+                    <h2>Обновить Аватару</h2>
+                    <form class="clientUpdate-form" action="/sinegorie/accounts/index.php" method="post" enctype="multipart/form-data">
+                    <label for="fupload" hidden></label>
+                    <input type=file hidden id=fupload name="fupload" accept=".jpg, .png, .gif">
+                    <p class="hint">Выберите аватар. Изображение должно быть формата jpg, png или gif:</p>
+                    <input type=button onClick=getFile.simulate() value="Выбрать">
+                    <label id=selected>Ничего не выбрано</label><br>
+                    <input type="submit" value="Обновить Аватару" id="uploadImage">
+                    <input type="hidden" name="action" value="updateAvatar">
+                    <input type="hidden" name="clientId" value="<?php if (isset($_SESSION['clientData']['clientId'])) {
+                                                                            echo $_SESSION['clientData']['clientId'];
+                                                                        } elseif (isset($clientId)) {
+                                                                            echo $clientId;
+                                                                        } ?>">
+                    </form>
+                </section>
+                </div>
             </main>
         </div>
         <div class="footer">

@@ -16,7 +16,7 @@ $classificationList .= '</select>';
 
 ?>
 <?php
-if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 3) {
     header('Location: /sinegorie/');
     exit;
 }
@@ -40,6 +40,8 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sinegorie/images/logo.png" type="image/x-icon">
+    <script src="https://rawgit.com/thielicious/selectFile.js/master/selectFile.js"></script>
+    <script src="../js/uploadimage.js"></script>
 </head>
 
 <body>
@@ -62,21 +64,13 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
                     <form action="/sinegorie/poetry/index.php" method="post">
                         <?php echo $classificationList; ?><br>
                         <label for="poemName">Название</label><br>
-                        <input type="text" name="poemName" id="poemName" <?php if (isset($poemName)) {
-                                                                                echo "value='$poemName'";
-                                                                            } ?> required><br>
+                        <input type="text" name="poemName" id="poemName" <?php if (isset($poemName)) { echo "value='$poemName'"; } ?> required><br>
                         <label for="poemText">Текст произведения</label><br>
-                        <textarea name="poemText" id="poemText" required><?php if (isset($poemText)) {
-                                                                                echo $poemText;
-                                                                            } ?></textarea><br>
-                        <label for="poemImage">Изображение</label><br>
-                        <input type="text" name="poemImage" id="poemImage" <?php if (isset($poemImage)) {
-                                                                                echo "value='$poemImage'";
-                                                                            } ?>><br>
+                        <textarea name="poemText" id="poemText" required><?php if (isset($poemText)) {echo $poemText;} ?></textarea><br>
+                        <label for="poemAuthor">Автор</label><br>
+                        <input type="text" name="poemAuthor" id="poemAuthor" <?php if (isset($poemAuthor)) { echo "value='$poemAuthor'"; } ?>><br>
                         <label for="poemDate">Дата</label><br>
-                        <input type="text" name="poemDate" id="poemDate" <?php if (isset($poemDate)) {
-                                                                                echo "value='$poemDate'";
-                                                                            } ?>><br>
+                        <input type="text" name="poemDate" id="poemDate" <?php if (isset($poemDate)) {echo "value='$poemDate'";} ?>><br>
                         <input type="submit" name="submit" id="addPoem" value="Добавить произведение">
                         <input type="hidden" name="action" value="addPoem">
                     </form>

@@ -40,19 +40,40 @@ if (!$_SESSION['loggedin']) {
                 <?php if (isset($_SESSION['message'])) {
                     echo $_SESSION['message'];
                 } ?>
-                <ul>
+                <ul class="userInfo">
                     <li>Логин: <?php echo $_SESSION['clientData']['clientLogin']; ?></li>
                     <li>Email: <?php echo $_SESSION['clientData']['clientEmail']; ?></li>
+                    <li>Статус: <?php if(isset($clientStatus)) echo $clientStatus; ?></li>
+                    <li>Аватар:<br> <?php echo "<img src="; echo $_SESSION['clientData']['clientImage'];echo">"; ?></li>
+                    <li><?php if(isset($displayFriends))echo $displayFriends ?></li>
                 </ul>
+                </section>
+                <section class="lc">
+                <h2>Управление сообщениями</h2>
+                <a class="admin-link" href="/sinegorie/messages/?action=messenger-view">Открыть почтовый ящик<?php if(isset($messageCounter)){ if($messageCounter < 1){echo "";} else { echo ' (<span class="msgCounter">'; echo $messageCounter;echo'</span>)';}}?></a>
                 </section>
                 <section class="lc">
                 <h2>Управление аккаунтом</h2>
                 <a class="admin-link" href="/sinegorie/accounts/?action=accountUpdate-view">Перейти к обновлению данных аккаунта</a>
                 </section>
-                <?php if ($_SESSION['clientData']['clientLevel'] > 1) {
+                <?php if ($_SESSION['clientData']['clientLevel'] > 2) {
                     echo '<section class="lc">';
                     echo '<h2>Управление контентом</h2>';
                     echo '<a class="admin-link" href="/sinegorie/poetry/">Перейти к управлению поэзией</a>';
+                    echo '</section>';
+                    echo '<section class="lc">';
+                    echo '<h2>Управление изображениями произведений</h2>';
+                    echo '<a class="admin-link" href="/sinegorie/uploads/">Перейти к управлению изображениями</a>';
+                    echo '</section>';
+                    echo '<section class="lc">';
+                    echo '<h2>Управление событиями</h2>';
+                    echo '<a class="admin-link" href="/sinegorie/events/">Перейти к управлению событиями</a>';
+                    echo '</section>';
+                }
+                if ($_SESSION['clientData']['clientLevel'] > 3) {
+                    echo '<section class="lc">';
+                    echo '<h2>Управление пользователями</h2>';
+                    echo '<a class="admin-link" href="/sinegorie/accounts/?action=clientPrivilege-view">Перейти к управлению пользователями</a>';
                     echo '</section>';
                 } ?>
                 <section>
@@ -61,10 +82,14 @@ if (!$_SESSION['loggedin']) {
                 if (isset($reviewsDisplay)) {
                     echo "<details><summary>Список рецензий</summary>";
                     echo $reviewsDisplay;
+                    if (empty($accountReviews)){
+                        echo "<p class='failure'>К сожалению, у вас пока нет рецензий</p>";
+                    }
                     echo "</details>";
                 }
                 ?>
                 </section>
+                <br><br>
             </main>
         </div>
         <div class="footer">

@@ -35,6 +35,9 @@
                 if (isset($_SESSION['message'])) {
                     echo $_SESSION['message'];
                 }
+                else if (isset($message)){
+                    echo $message;
+                }
                 ?>
                 <form action="/sinegorie/accounts/" method="post" class="login-form">
                     <label for="clientEmail">Email</label><br>

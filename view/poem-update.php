@@ -18,7 +18,7 @@ foreach ($classifications as $classification) {
 $classificationList .= '</select>';
 ?>
 <?php
-if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 3) {
     header('Location: /sinegorie/');
     exit;
 }
@@ -54,8 +54,8 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
                 <?php echo getNavigationBar($classifications); ?>
             </nav>
             <main class="poemUpdate-view">
-                <h1><?php if (isset($poemInfo['poemName'])) { echo "Изменить $poemInfo[poemName]";} 
-                elseif (isset($poemName)) {echo "Изменить $poemName";} ?></h1>
+                <h1><?php if (isset($poemInfo['poemName'])) { echo "Изменить \"$poemInfo[poemName]\"";} 
+                elseif (isset($poemName)) {echo "Изменить \"$poemName\"";} ?></h1>
                 <?php
                 if (isset($message)) {
                     echo $message;
@@ -68,25 +68,31 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
                                                                                 echo "value='$poemName'";
                                                                             } elseif (isset($poemInfo['poemName'])) {
                                                                                 echo "value='$poemInfo[poemName]'";
-                                                                            } ?> required placeholder="название"><br>
+                                                                            } ?> required placeholder="Белая береза"><br>
                         <label for="poemText">Текст произведения</label><br>
                         <textarea name="poemText" id="poemText" required><?php if (isset($poemText)) {
                                                                                 echo $poemText;
                                                                             } elseif (isset($poemInfo['poemText'])) {
                                                                                 echo $poemInfo['poemText'];
                                                                             } ?></textarea><br>
+                                                                             <label for="poemAuthor">Автор</label><br>
+                        <input type="text" name="poemAuthor" id="poemAuthor" <?php if (isset($poemNAuthor)) {
+                                                                                echo "value='$poemAuthor'";
+                                                                            } elseif (isset($poemInfo['poemAuthor'])) {
+                                                                                echo "value='$poemInfo[poemAuthor]'";
+                                                                            } ?> placeholder="Сергей Есенин"><br>
                         <label for="poemDate">Дата написания</label><br>
-                        <input type="text" name="poemDate" id="poemDate" placeholder="31 декабря 1999г." <?php if (isset($poemDate)) {
-                                                                                                                echo $poemDate;
-                                                                                                            } elseif (isset($poemInfo['poemDate'])) {
-                                                                                                                echo $poemInfo['poemDate'];
-                                                                                                            } ?>><br>
+                        <input type="text" name="poemDate" id="poemDate" <?php if (isset($poemDate)) {
+                                                                                   echo "value='$poemDate'";
+                                                                                } elseif (isset($poemInfo['poemDate'])) {
+                                                                                echo "value='$poemInfo[poemDate]'";
+                                                                                } ?>><br>
                         <label for="poemImage">Изображение</label><br>
                         <input type="text" name="poemImage" id="poemImage" <?php if (isset($poemImage)) {
                                                                                 echo "value='$poemImage'";
                                                                             } elseif (isset($poemInfo['poemImage'])) {
                                                                                 echo "value='$poemInfo[poemImage]'";
-                                                                            } ?> value="/images/no-image.png" placeholder="/images/безымянный.png"><br>
+                                                                            } ?> placeholder="/images/безымянный.png"><br>
                         <input type="submit" name="submit" id="updPoem" value="Изменить произведение">
                         <input type="hidden" name="action" value="updatePoem">
                         <input type="hidden" name="poemId" value="<?php if (isset($poemInfo['poemId'])) {

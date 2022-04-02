@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sinegorie/images/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
@@ -28,11 +29,29 @@
             <nav>
                 <?php echo getNavigationBar($classifications); ?>
             </nav>
-            <main>
+            <main class="home-view">
                 <h1>Добро пожаловать в Синегорье!</h1>
-                <?php echo "Количество зарегестрированных пользователей: ";
-                if (isset($aN)) echo $aN;
-                ?>
+                <div class="flexer">
+                <section>
+                <h2>Активность сайта</h2>
+                    <?php echo "<h3>Зарегестрированных пользователей: ";
+                    if (isset($aN)) echo $aN;
+                    echo "</h3><br>";
+                    echo "<h3>Произведений: ";
+                    if (isset($pN)) echo $pN;
+                    echo "</h3><br>";
+                    echo "<h3>Количество рецензий: ";
+                    if (isset($rN)) echo $rN;
+                    echo "</h3><br>";
+                    echo "<h3>Последняя рецензия:</h3>";
+                    if (isset($displayLastReview)) echo $displayLastReview;echo"</h3>";
+                    ?>
+                </section>
+                <section>
+                    <h2>Ближайшие события</h2>
+                    <?php if(isset($displayEvents))echo $displayEvents;?>
+                </section>               
+                </div>
             </main>
         </div>
         <div class="footer">

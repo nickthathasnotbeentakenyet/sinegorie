@@ -19,7 +19,7 @@ function createReview($reviewText, $poemId, $clientId)
 function getAllReviews($poemId)
 {
     $db = sinegorieConnect();
-    $sql = 'SELECT reviews.reviewText, reviews.reviewDate, clients.clientLogin
+    $sql = 'SELECT reviews.poemId, reviews.reviewId, reviews.reviewText, reviews.reviewDate, clients.clientId, clients.clientLogin, clients.clientImage
             FROM reviews 
             JOIN poetry ON reviews.poemId = poetry.poemId 
             JOIN clients ON reviews.clientId = clients.clientId
@@ -37,7 +37,7 @@ function getAllReviews($poemId)
 function getAccountReviews($clientId)
 {
     $db = sinegorieConnect();
-    $sql = 'SELECT poetry.poemId, poetry.poemName, reviews.reviewDate, reviews.reviewId 
+    $sql = 'SELECT poetry.poemId, poetry.poemName, reviews.reviewText, reviews.reviewDate, reviews.reviewId 
             FROM reviews
             JOIN poetry ON reviews.poemId = poetry.poemId 
             WHERE clientId = :clientId';
@@ -90,3 +90,29 @@ function deleteReview($reviewId)
     $stmt->closeCursor();
     return $rowsChanged;
 }
+
+// get total number of reviews
+function reviewsNumber(){
+    $db = sinegorieConnect();
+    $sql = 'SELECT count(reviewId) FROM reviews';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $rows;
+} 
+
+// get last review
+function lastReview(){
+    $db = sinegorieConnect();
+    $sql = 'SELECT reviewText, reviewDate, clients.clientId, clientLogin, reviews.poemId ,poemName  
+    FROM reviews JOIN clients ON reviews.clientId = clients.clientId 
+    JOIN poetry ON poetry.poemId = reviews.poemId ORDER BY reviews.reviewId DESC LIMIT 1 ';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $rows;
+} 
+
+

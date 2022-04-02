@@ -10,11 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sinegorie/images/logo.png" type="image/x-icon">
 </head>
@@ -27,10 +23,7 @@
             </header>
             <main class="error500">
                 <h1>"ERROR 500 INTERNAL SERVER ERROR"</h1>
-                <p>
-                    Приносим свои извинения. Наш сервер в настоящее время испытывает трудности.<br>
-                    Мы скоро все починим.
-                </p>
+                <img src="/sinegorie/images/500.jpg" alt="">
             </main>
         </div>
         <div class="footer">

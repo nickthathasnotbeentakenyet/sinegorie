@@ -1,5 +1,5 @@
 <?php
-if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 3) {
     header('Location: /sinegorie/');
     exit;
 }
@@ -38,18 +38,22 @@ if (isset($_SESSION['message'])) {
                 <?php echo getNavigationBar($classifications); ?>
             </nav>
             <main class="poetryManagement">
+                <?php if (isset($message)) {
+                    echo $message;
+                }
+                ?>
                 <h1>Управление поэзией</h1>
+                <div class="pmgr">
                 <section>
-                <h2>Добавить контент</h2>
+                <h2>Управление контентом</h2>
                 <div>
                     <a href="/sinegorie/poetry/index.php?action=addClassification-view">Добавить Жанр</a><br>
-                    <a href="/sinegorie/poetry/index.php?action=addPoem-view">Добавить произведение</a>
+                    <a href="/sinegorie/poetry/index.php?action=updateClassification-view">Изменить Жанр</a><br>
+                    <a href="/sinegorie/poetry/index.php?action=deleteClassification-view">Удалить Жанр</a><br>
+                    <a href="/sinegorie/poetry/index.php?action=addPoem-view">Добавить произведение</a><br>
                 </div>
                 </section>
                 <?php
-                if (isset($message)) {
-                    echo $message;
-                }
                 if (isset($classificationList)) {
                     echo '<section>';
                     echo '<div>';
@@ -57,13 +61,26 @@ if (isset($_SESSION['message'])) {
                     echo '<p>Произведения по жанрам</p>';
                     echo $classificationList;
                     echo '</div>';
-                    echo '</section>';
                 }
                 ?>
                 <noscript>
                     <p><strong>Пожалуйста, включите JavaScript для корректной работы сайта</strong></p>
                 </noscript>
                 <table id="poemsDisplay"></table>
+                <br>
+                <form action="/sinegorie/poetry/index.php" method="GET" class="search">
+                <label>Поиск по названию</label><br>
+                <input type="text" name="poemName" id="poemName" required><br>
+                <input type="hidden" name="action" value="findPoem">
+                <input type="submit" name="findPoem" value="Найти">
+                </form>
+                <?php 
+                if(isset($displayResult)) {
+                    echo $displayResult;
+                }
+                ?>
+                </section>
+                </div>
             </main>
         </div>
         <div class="footer">

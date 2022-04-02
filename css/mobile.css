@@ -51,12 +51,20 @@ body {
     flex: 0 0 auto;
 }
 
-h1,h2,h3{
-   color: #3a3a3a;
+.footer p {
+    padding: .3em 0;
 }
-header h1{
+
+h1,
+h2,
+h3 {
+    color: #3a3a3a;
+}
+
+header h1 {
     color: white;
 }
+
 header,
 footer,
 footer a {
@@ -98,7 +106,7 @@ header {
 .hRight a {
     margin-right: .5em;
     color: #a3c4f3ff;
-    font-size: large;
+    font-size: 1.4em;
 }
 
 #welcomeMessage:hover {
@@ -145,7 +153,6 @@ header {
     text-align: left;
     padding-left: 1em;
     text-decoration: none;
-    color: white;
     font-weight: 700;
     font-size: 20px;
     font-family: 'Orbitron';
@@ -178,43 +185,51 @@ main h1 {
 .register-view {
     margin-left: 1em;
 }
-.login-view hr{
+
+.login-view hr {
     width: 95%;
 }
-.login-view section:nth-of-type(1){
-    border-left:#fbf8ccff 5px solid;
+
+.login-view section:nth-of-type(1) {
+    border-left: #fbf8ccff 5px solid;
     padding-left: 1em;
     margin-bottom: 1em;
 }
-.login-view section:nth-of-type(2){
-    border-left:#90dbf4ff 5px solid;
+
+.login-view section:nth-of-type(2) {
+    border-left: #90dbf4ff 5px solid;
     padding-left: 1em;
 }
+
 .login-form label,
 .register-view label {
     font-size: x-large;
 }
 
-.login-form input{
-    border-left:#fbf8ccff 5px solid;
+.login-form input {
+    border-left: #fbf8ccff 5px solid;
     padding: .3em .5em;
     font-size: larger;
     margin-bottom: .5em;
 }
-.register-form input{
-    border-left:#90dbf4ff 5px solid;
+
+.register-form input {
+    border-left: #90dbf4ff 5px solid;
     padding: .3em .5em;
     font-size: larger;
     margin-bottom: .5em;
 }
-#passwordWarning {
+
+#passwordWarning,
+.warning {
     color: crimson;
 }
-.hint{
+
+.hint {
     color: teal;
 }
 
-.login-submit{
+.login-submit {
     border: none;
     background-color: #fbf8ccff;
     color: #3a3a3a;
@@ -222,6 +237,7 @@ main h1 {
     border-radius: 5px;
     box-shadow: #546a76 3px 2px;
 }
+
 .reg {
     border: none;
     background-color: #90dbf4ff;
@@ -280,6 +296,10 @@ main h1 {
     color: crimson;
 }
 
+.error500 img {
+    width: 100%;
+}
+
 /* ************ Admin-view ******** */
 .admin-view {
     margin-left: 1em;
@@ -313,8 +333,26 @@ main h1 {
 .admin-view section:nth-child(4) {
     border-left: #b9fbc0ff 5px solid;
 }
+.admin-view section:nth-child(5) {
+    border-left: #98f5e1ff 5px solid;
+    margin-bottom: 1em;
+}
+.admin-view section:nth-child(6) {
+    border-left: #90dbf4ff 5px solid;
+}
 
-.lc a{
+.admin-view section:nth-child(7) {
+    border-left: #a3c4f3ff 5px solid;
+    margin-bottom: 1em;
+}
+.admin-view section:nth-child(8) {
+    border-left: #cfbaf0ff 5px solid;
+    margin-bottom: 1em;
+}
+
+
+
+.lc a {
     text-decoration: none;
     font-size: larger;
     color: #4c96d7;
@@ -339,9 +377,11 @@ main h1 {
 .reviewDelLink:hover {
     color: crimson;
 }
-.reviewedDate{
+
+.reviewedDate {
     color: #546a76;
 }
+
 .gridview {
     display: grid;
 }
@@ -356,71 +396,111 @@ main h1 {
 .adminVLink:hover {
     color: coral;
 }
-
-/* ************ Account Management *********** */
-.clientUpdate{
-margin-left: 1em;
+.userInfo li{
+    margin-bottom: .3em;
+    width: fit-content;
+    padding: .3em .5em;
+    border-radius: 5px;
 }
-.clientUpdate section:nth-of-type(1){
-    border-left:#f1c0e8ff 5px solid;
+.userInfo li:first-of-type{
+    background-color: #a3c4f3ff;
+}
+.userInfo li:nth-of-type(2){
+    background-color: #b9fbc0ff;
+}
+.userInfo li:nth-of-type(3){
+    background-color: #cfbaf0ff;
+}
+.userInfo li:nth-of-type(4){
+    background-color: #f1c0e8ff;
+}
+/* ************ Account Management *********** */
+.clientUpdate {
+    margin-left: 1em;
+}
+
+.clientUpdate section:nth-of-type(1) {
+    border-left: #f1c0e8ff 5px solid;
     padding-left: 1em;
     margin-bottom: 1em;
 }
-.clientUpdate section:nth-of-type(1) input{
-        border-left:#f1c0e8ff 5px solid;
+
+.clientUpdate section:nth-of-type(1) input {
+    border-left: #f1c0e8ff 5px solid;
 }
-.clientUpdate section:nth-of-type(1) input:nth-of-type(3){
+
+.clientUpdate section:nth-of-type(1) input:nth-of-type(3) {
     border: none;
 }
-.clientUpdate section:nth-of-type(2){
-    border-left:#98f5e1ff 5px solid;
+
+.clientUpdate section:nth-of-type(2) {
+    border-left: #98f5e1ff 5px solid;
     padding-left: 1em;
+    margin-bottom: 1em;
 }
-.clientUpdate section:nth-of-type(2) input{
-    border-left:#98f5e1ff 5px solid;
+
+.clientUpdate section:nth-of-type(2) input {
+    border-left: #98f5e1ff 5px solid;
 }
-.clientUpdate section:nth-of-type(2) input:nth-of-type(2){
+
+.clientUpdate section:nth-of-type(2) input:nth-of-type(2) {
     border: none;
 }
-.clientUpdate-form input{
-font-size: large;
-padding: .2em .5em;
+
+.clientUpdate section:nth-of-type(3) {
+    border-left: teal 5px solid;
+    padding-left: 1em;
+    margin-bottom: 1em;
 }
-.updClient1{
-    background-color:#f1c0e8ff;
+
+.clientUpdate-form input {
+    font-size: large;
+    padding: .2em .5em;
+}
+
+.updClient1 {
+    background-color: #f1c0e8ff;
     border-radius: 4px;
     box-shadow: #546a76 3px 2px;
 }
-.updClient2{
-    background-color:#98f5e1ff;
+
+.updClient2 {
+    background-color: #98f5e1ff;
     border-radius: 4px;
     box-shadow: #546a76 3px 2px;
 }
-.updClient1:hover, .updClient2:hover{
+
+.updClient1:hover,
+.updClient2:hover {
     background-color: #4c96d7;
     color: white;
 }
+
 /* ******** Poetry management ************ */
-.poetryManagement{
+.poetryManagement {
     margin-left: 1em;
 }
-.poetryManagement section:nth-of-type(1){
+
+.poetryManagement section:nth-of-type(1) {
     border-left: #a3c4f3ff 5px solid;
     padding-left: 1em;
     margin-bottom: 1em;
 }
-.poetryManagement section:nth-of-type(2){
+
+.poetryManagement section:nth-of-type(2) {
     border-left: #cfbaf0ff 5px solid;
     padding-left: 1em;
+    margin-bottom: 1em;
 }
-.poetryManagement section:nth-of-type(1) a{
+
+.poetryManagement section:nth-of-type(1) a {
     display: inline-block;
     text-decoration: none;
     font-size: larger;
     color: white;
     background-color: #4c96d7;
     border-radius: 5px;
-    padding:.2em .3em;
+    padding: .2em .3em;
     margin-bottom: .3em;
     box-shadow: #546a76 3px 2px;
 }
@@ -429,6 +509,7 @@ padding: .2em .5em;
     color: white;
     background-color: teal;
 }
+
 .poetryManagement select {
     background-color: #cfbaf0ff;
     font-size: large;
@@ -436,101 +517,191 @@ padding: .2em .5em;
     padding: .2em .3em;
     box-shadow: #546a76 3px 2px;
 }
-#poemsDisplay{
-    border-left: #cfbaf0ff 5px solid;
-    padding-left: 1em; 
+
+.fpoemList li {
+    list-style: none;
 }
-.tabPoem{
-    border-bottom: #cfbaf0ff 3px solid;
-    width: fit-content;
+
+.fpoemList {
+    display: grid;
+    grid-template-columns: .9fr .4fr .4fr;
 }
-.tabPoemN{
-font-size: large;
-margin: 0;
+
+.tabPoemN a {
+    font-size: 1em;
+    margin: 0;
+    color: #4c96d7;
+    text-decoration: none;
 }
-.tabPoemU a,.tabPoemD a{
+
+.tabPoemN a:hover {
+    color: coral;
+}
+
+.tabPoemU a,
+.tabPoemD a {
     margin-left: .5em;
     text-decoration: none;
     color: #4c96d7;
-    font-size: large;
+    font-size: 1em;
 }
-.tabPoemU a:hover{
+
+.tabPoemU a:hover {
     color: goldenrod;
 }
-.tabPoemD a:hover{
+
+.tabPoemD a:hover {
     color: crimson;
 }
+
+.search label {
+    font-size: 1.2em;
+}
+
+.search input[type=text] {
+    width: 90%;
+    border-left: #cfbaf0ff 5px solid;
+    border-radius: 5px;
+    padding: .2em .3em;
+    font-size: larger;
+}
+
+.search input[type=submit] {
+    margin-top: .5em;
+    background-color: #cfbaf0ff;
+    border-radius: 5px;
+    padding: .3em .5em;
+    font-size: larger;
+    box-shadow: #546a76 3px 2px 5px;
+}
+
+.search input[type=submit]:hover {
+    background-color: #4c96d7;
+    color: white;
+}
+
 /* ******* addClassification ********** */
-.addClassification div{
+.addClassification div {
     margin-left: 1em;
-    border-left:#98f5e1ff 5px solid ;
+    border-left: #98f5e1ff 5px solid;
     padding-left: 1em;
 }
-.addClassification form label{
+
+.addClassification form label {
     color: #3a3a3a;
     font-size: large;
 }
-.addClassification form input{
+
+.addClassification form input {
     padding: .2em .3em;
     font-size: large;
-    border-left:#98f5e1ff 3px solid ;
+    border-left: #98f5e1ff 3px solid;
     margin-bottom: 1em;
 }
-#addClassification{
+
+#addClassification {
     border: none;
     margin-bottom: 0;
-    background-color:#98f5e1ff;
+    background-color: #98f5e1ff;
     border-radius: 4px;
     padding: .2em .5em;
     box-shadow: #546a76 3px 2px;
 }
-#addClassification:hover{
+
+#addClassification:hover {
     background-color: #4c96d7;
     color: white;
 }
+
 /* ******* Add Poem ******* */
-.addPoem div{
+.addPoem div {
     margin-left: 1em;
-    border-left:#f1c0e8ff 5px solid ;
+    border-left: #f1c0e8ff 5px solid;
     padding-left: 1em;
 }
-.addPoem form label{
+
+.addPoem form label {
     color: #3a3a3a;
     font-size: large;
 }
+
 .addPoem form select {
     background-color: #f1c0e8ff;
     font-size: large;
     padding: .2em .3em;
     border-radius: 5px;
 }
-.addPoem form input{
+
+.addPoem form input {
     padding: .2em .3em;
     font-size: large;
-    border-left:#f1c0e8ff 5px solid ;
+    border-left: #f1c0e8ff 5px solid;
     margin-bottom: 1em;
 }
-.addPoem textarea{
+
+.addPoem textarea {
     height: 10em;
     width: 95%;
 }
-#addPoem{
+
+#addPoem {
     border: none;
     margin-bottom: 0;
-    background-color:#f1c0e8ff;
+    background-color: #f1c0e8ff;
     box-shadow: #9cadce 3px 3px;
     border-radius: 4px;
 }
-#addPoem:hover{
+
+#addPoem:hover {
     background-color: #4c96d7;
     color: white;
 }
 
+
 /* ************** reviews ************** */
+.revmanLink{
+    color: coral;
+    text-decoration: none;
+}
+.revmanLink:hover{
+    color:goldenrod;
+}
+.revmanLink2{
+    color: #4c96d7;
+    text-decoration: none;
+}
+.revmanLink2:hover{
+    background-color: #4c96d7;
+    padding: .2em .3em;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #546a76;
+    width: fit-content;
+    color: white;
+}
+.authorName{
+    font-family: 'Bad script', cursive;
+    color: darkgoldenrod;
+}
+.reviewFlex {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+
+}
+
+.mhide {
+    display: none;
+}
+
+.reviewFlex img {
+    max-width: 50px;
+    border-radius: 10px;
+}
+
 .review {
     margin-left: 1em;
 }
-.reviewRev{
+
+.reviewRev {
     padding-left: 1em;
     color: white;
 }
@@ -543,7 +714,7 @@ margin: 0;
 
 #noreviews {
     color: crimson;
-    font-size: large;
+    font-size: 1em;
 }
 
 #reviewLogin {
@@ -565,22 +736,30 @@ margin: 0;
     margin-right: .5em;
     background-color: #63717f;
     padding: .2em 0;
+}
+
+.reviewsInfo p:first-of-type {
     border-radius: 5px 5px 0 0;
 }
 
-.reviewsInfo p:nth-of-type(2n) {
+.reviewsInfo p:nth-of-type(3n) {
     padding: .5em 1em;
     background-color: lightgray;
     border-radius: 0 0 5px 5px;
     font-size: 1.2em;
 }
 
-.reviewsScreenName {
+.reviewsScreenName a{
     color: #1abc9c;
+    text-decoration: none;
+}
+.reviewsScreenName a:hover{
+    color: coral;
 }
 
 .reviewsDate {
     color: lightgoldenrodyellow;
+    padding-left: 1em;
 }
 
 .review h3 {
@@ -660,29 +839,34 @@ margin: 0;
     background-color: #4c96d7;
     color: #ffffff;
 }
+
 /* ************* Poem Update ************* */
-.poemUpdate-view{
+.poemUpdate-view {
     margin-left: 2em;
 }
-.poemUpdate-view form{
+
+.poemUpdate-view form {
     border-left: #98f5e1ff 5px solid;
     padding-left: 1em;
 }
-.poemUpdate-view form select{
+
+.poemUpdate-view form select {
     border-left: #98f5e1ff 5px solid;
     font-size: 1.2em;
     box-shadow: #63717f 2px 3px;
-    padding:.2em .3em;
+    padding: .2em .3em;
     border-radius: 5px;
 }
-.poemUpdate-view form input{
+
+.poemUpdate-view form input {
     font-size: 1.1em;
     padding: .2em .3em;
     border-left: #98f5e1ff 4px solid;
     box-shadow: #63717f 3px 2px;
     margin-bottom: .5em;
 }
-.poemUpdate-view form textarea{
+
+.poemUpdate-view form textarea {
     height: 20em;
     width: 95%;
     font-size: large;
@@ -690,41 +874,42 @@ margin: 0;
     border-left: #98f5e1ff 4px solid;
     box-shadow: #63717f 3px 2px;
 }
-#updPoem{
+
+#updPoem {
     border: none;
-    background-color:#98f5e1ff;
+    background-color: #98f5e1ff;
     border-radius: 5px;
     box-shadow: #63717f 2px 3px;
 }
-#updPoem:hover{
+
+#updPoem:hover {
     background-color: #4c96d7;
     color: white;
 }
 
 /* *********** Poem View * Poem Content ********* */
-.poemContent{
+.poemContent {
     margin-left: 1em;
     margin-bottom: 1em;
 }
-.poemContent p:nth-of-type(2){
-    border-left:#cfbaf0ff 5px solid ;
-    padding-left: 1em;
+
+.poemContent pre {
+    font-family: 'El Messiri', sans-serif;
     font-size: 1.1em;
 }
-.poemContent p:last-of-type{
-    border-bottom: #546a76 2px solid;
-    width: fit-content;
+.poemContent pre::first-letter{
+    font-family: 'Ruslan Display', cursive;
+    font-size: 1.9em;
+    color: crimson;
 }
 
 /* *********upload image * images * need to re-check *********** */
 .failure {
-    font-size: large;
     color: crimson;
     margin-bottom: 1em;
 }
 
 .success {
-    font-size: large;
     color: #1abc9c;
     margin-bottom: 1em;
 }
@@ -740,6 +925,10 @@ margin: 0;
     box-shadow: 2px 2px 2px #3a3a3a;
     border-radius: 5px;
     margin-top: .5em;
+}
+
+#uploadImage:hover {
+    background: #0aa;
 }
 
 input[type=file] {
@@ -759,6 +948,8 @@ input[type=file]:focus:valid {
 #image-display img {
     max-width: 100%;
     margin-top: 1.5em;
+    border-radius: 10px;
+    box-shadow: #546a76 3px 3px 5px;
 }
 
 #image-display a {
@@ -767,6 +958,7 @@ input[type=file]:focus:valid {
 
 #image-display li {
     list-style-type: none;
+    margin-right: 1em;
 }
 
 input[type=file] {
@@ -776,9 +968,18 @@ input[type=file] {
     border-radius: 5px;
 }
 
+.imageUploadView {
+    margin-left: 1em;
+}
+
+.imageUploadView fieldset {
+    border: none;
+}
+
 .imageUploadView hr {
     height: 3px;
     background-color: cadetblue;
+    margin-top: 1em;
 }
 
 
@@ -795,7 +996,7 @@ input[type=file] {
     box-shadow: 2px 2px 2px #3a3a3a;
 }
 
-[value="Select File"] {
+[value="Выбрать"] {
     background: teal;
     cursor: pointer;
     color: white;
@@ -808,27 +1009,8 @@ input[type=file] {
     margin-top: .5em;
 }
 
-[value=getFile]:hover {
+[value=Выбрать]:hover {
     background: #0aa;
-}
-
-.thumbs {
-    flex-direction: column;
-}
-
-.thumbs img {
-    max-width: 50%;
-    height: 150px;
-}
-
-#thumbsH2 {
-    font-family: 'Gemunu Libre', sans-serif;
-    font-size: 1.3em;
-    margin: .5em .5em;
-}
-
-#thumbsHiddenMobile {
-    display: none;
 }
 
 details[open] {
@@ -843,4 +1025,421 @@ details[open] {
     100% {
         opacity: 1;
     }
+}
+
+/* radio button toggle */
+.form_toggle {
+    overflow: hidden;
+}
+
+.form_toggle-item {
+    display: inline-block;
+}
+
+/* .form_toggle-item input[type=radio] {
+    display: none;
+} */
+
+.form_toggle-item label {
+    display: inline-block;
+    padding: 0 10px;
+    border: 2px solid #999;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 4px 2px #3a3a3a;
+}
+
+.form_toggle .item-1 label {
+    border-radius: 6px 0 0 6px;
+    color: #3a3a3a;
+}
+
+.form_toggle .item-2 label {
+    border-radius: 0 6px 6px 0;
+    color: #3a3a3a;
+}
+
+/* Checked */
+/* .form_toggle .item-1 input[type=radio]:checked+label {
+    background-color: teal;
+    color: white;
+    font-size: x-large;
+    border: none;
+} */
+
+/* .form_toggle .item-2 input[type=radio]:checked+label {
+    background-color: crimson;
+    color: white;
+    font-size: x-large;
+    border: none;
+} */
+
+#TealColor {
+    color: teal;
+}
+
+.imageUploadSelector {
+    font-size: large;
+    margin: 0 0 .5em .5em;
+    box-shadow: 2px 2px 2px #3a3a3a;
+    border-radius: 5px;
+}
+
+/* ***************** HOME VIEW **************** */
+.home-view {
+    margin: 0 1em;
+}
+
+.home-view h2 {
+    font-size: large;
+    color: #3a3a3a;
+}
+
+.home-view h3 {
+    font-size: medium;
+    color: #1B5583;
+}
+
+.home-view section {
+    margin-top: .5em;
+}
+
+.home-view section:nth-of-type(1) {
+    border-left: #a3c4f3ff 5px solid;
+    padding-left: .5em;
+}
+
+.home-view section:nth-of-type(2) {
+    border-left: #b9fbc0ff 5px solid;
+    padding-left: .5em;
+}
+
+.home-view section:nth-of-type(3) {
+    border-left: #fbf8ccff 5px solid;
+    padding-left: .5em;
+}
+
+.lastreview li {
+    list-style: none;
+}
+
+.lastreview li a {
+    text-decoration: none;
+}
+
+.lastreview li a:hover {
+    color: darksalmon;
+}
+
+.reviewdate {
+    color: darkgoldenrod;
+}
+
+.reviewText {
+    background-color: #63717f;
+    padding: .3em .5em;
+    border-radius: 5px;
+    color: lightgoldenrodyellow;
+}
+
+/* *********** Classification view ************ */
+.classificationPageHead {
+    font-size: large;
+}
+
+.inv-display li {
+    list-style: none;
+}
+
+.inv-display li img {
+    width: 78%;
+    max-height: 200px;
+    margin: 0 10%;
+    border-radius: 10px;
+    box-shadow: #63717f 3px 3px 10px;
+}
+
+.inv-display h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.notice {
+    color: crimson;
+    margin-left: 1em;
+}
+
+/* **************** POEM VIEW **************** */
+.poemPage h1 {
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Bad script', cursive;
+}
+
+.poemContainer div:first-of-type {
+    margin-bottom: 1em;
+}
+
+.poemContainer img {
+    width: 92%;
+    max-height: 200px;
+    margin: 0 2%;
+    border-radius: 10px;
+    box-shadow: #63717f 3px 3px 10px;
+}
+
+.eventManagement {
+    margin-left: 1em;
+}
+
+.eventManagement section{
+    border-left: #a3c4f3ff 5px solid;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+.eventManagement section a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+    background-color: #4c96d7;
+    border-radius: 5px;
+    padding: .2em .3em;
+    margin-bottom: .3em;
+    box-shadow: #546a76 3px 2px;
+}
+
+.eventManagement section a:hover {
+    color: white;
+    background-color: teal;
+}
+
+
+/* ********** PRIVILEGES ************* */
+.userSelector{
+    font-size: large;
+}
+.privilege-page h1{
+text-align: center;
+}
+.userPrivilege-form {
+    width: 50%;
+    margin: 0 25%;
+    background-color: #eee;
+    padding: 1em 2em;
+    box-shadow: #546a76 3px 5px 10px;
+}
+.userPrivilege-form #user, .userPrivilege-form #newPrivilege{
+    font-size: large;
+}
+.userPrivilege-form input[type=submit]{
+    background-color: teal;
+    color: white;
+    padding: .5em 1em;
+    font-size: large;
+    border-radius: 10px;
+    box-shadow: #546a76 3px 3px 5px;
+}
+.userPrivilege-form input[type=submit]:hover{
+    background-color: #0aa;
+}
+.button-label {
+    display: inline-block;
+    padding: .5em 1em;
+    margin:.5em .5em 1em 0;
+    cursor: pointer;
+    color: #3a3a3a;
+    border-radius: 0.25em;
+    background: lightcyan;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+    transition: 0.3s;
+    user-select: none;
+}
+.button-label:hover {
+    background: #eee;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
+}
+
+.button-label:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22);
+}
+
+#reader:checked+.button-label {
+    background: #4c96d7;
+}
+
+#reader:hover+.button-label:hover {
+    background: lightskyblue;
+}
+
+#moder:checked+.button-label {
+    background: lightseagreen;
+}
+
+#moder:hover+.button-label:hover {
+    background: lightgreen;
+}
+
+
+#admin:checked+.button-label {
+    background: crimson;
+}
+
+#admin:hover+.button-label:hover {
+    background: lightcoral;
+}
+#ban:checked+.button-label {
+    background: #3a3a3a;
+}
+#ban:hover+.button-label:hover {
+    background: #546a76;
+}
+
+#reader:checked+.button-label h1, #moder:checked+.button-label h1, #admin:checked+.button-label h1, #ban:checked+.button-label h1{
+    color: white;
+}
+.hidden {
+    display: none;
+}
+/*  message view */
+#mailboxh1{
+    text-align: center;
+}
+.messenger-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 15%;
+}
+.messenger-view section:nth-of-type(1){
+    background-color: wheat;
+    margin-right: 1em;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    box-shadow: #546a76 3px 3px 5px;
+}
+.messenger-view section:nth-of-type(2){
+    background-color: #cfbaf0ff;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    box-shadow: #546a76 3px 3px 5px;
+    }
+.msgItem li{
+    width: fit-content;
+    padding: .5em .3em .5em .5em;
+    border-radius: 10px;
+    list-style: none;
+    background-color:  #e8e8e8;
+    box-shadow: #3a3a3a 3px 3px 5px;
+}
+.msgName {
+color: teal;
+text-decoration: none;
+}
+.msgName:hover{
+    color: tomato;
+}
+.msgDate{
+color: tomato;
+}
+.msgDel{
+color: white;
+background-color:  darksalmon;
+    box-shadow: #3a3a3a 3px 3px 5px;
+padding: .2em .4em;
+text-decoration: none;
+border-radius: 5px;
+font-size: large;
+}
+.msgDel:hover{
+    background-color: tomato;
+    color: white;
+}
+.msgText{
+color: darkgoldenrod;
+}
+.checkMail{
+    background-color: #1abc9c;
+    padding: .2em .4em;
+    width: fit-content;
+    font-size: large;
+    border-radius: 5px;
+    box-shadow: #3a3a3a 3px 3px 5px;
+    margin: 1em 0;
+}
+.checkMail:hover{
+    background-color: tomato;
+}
+.checkMail a{
+    color: white;
+    text-decoration: none;
+}
+.sendMsg form label{
+    font-size: large;
+    color: white;
+}
+.sendMsg form select{
+    font-size: large;
+    background-color: white;
+    border-radius: 5px;
+    color: #4c96d7;
+    box-shadow: #3a3a3a 3px 3px 5px;
+}
+.sendMsg form textarea{
+width: 30em;
+height: 10em;
+border: tomato 2px solid;
+}
+.sendMsg form input[type=submit]{
+    background-color: #1abc9c;
+    color: white;
+    padding: .2em .4em;
+    width: fit-content;
+    font-size: large;
+    border-radius: 5px;
+    box-shadow: #3a3a3a 3px 3px 5px;
+    margin: 1em 0;
+}
+.sendMsg form input[type=submit]:hover{
+    background-color: tomato;
+}
+.msgCounter{
+    color: tomato;
+}
+.yes{
+padding: .1em .3em;
+background-color: #1abc9c;
+border-radius: 5px;
+font-size: large;
+color: white;
+text-decoration: none;
+box-shadow: #546a76 3px 3px 5px;
+margin-right: .5em;
+}
+.yes:hover{
+background-color: #0aa;
+}
+.no{
+    padding: .1em .3em;
+    background-color: tomato;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    box-shadow: #546a76 3px 3px 5px;
+}
+.no:hover{
+ background-color: orangered;
+}
+.mailLink img{
+    width: 1.5em;
+    vertical-align: middle;
+}
+.frlist{
+    margin-top: .5em;
+}
+.frlist li{
+    display: inline;
+    margin-right: .5em;
 }

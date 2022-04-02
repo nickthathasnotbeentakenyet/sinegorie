@@ -10,13 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/sinegorie/images/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
@@ -29,52 +28,85 @@
                 <?php echo getNavigationBar($classifications); ?>
             </nav>
             <main>
-                <section  class='poemContent'>
-                    <?php if (isset($message)) {echo $message;}
-                    ?>
-                    <div>
-                        <?php if (isset($poemDisplay)) {echo $poemDisplay;} ?>
+                <section class='poemContent'>
+                    <?php if (isset($message)) {
+                        echo $message;
+                    }
+                    ?>      
+                    <div class="detailed-container">
+                        <?php 
+                        // if (isset($thumbsDisplay)) {
+                        //     echo $thumbsDisplay;}
+                        if (isset($poemDisplay)) {
+                            echo $poemDisplay;
+                        } ?>
                     </div>
                 </section>
                 <hr>
-        <section class="review" id="review">
-        <h2>Рецензии</h2>
-        <?php
-        if (isset($msgNoReviews)) {
-            echo $msgNoReviews;
-        }
-        if (isset($displayReviews)) {
-            echo $displayReviews;
-        }
-        ?>
-        <?php
-        if (!isset($_SESSION['loggedin'])) {
-            echo '<div class="flexyRight">';
-            echo '<p id="reviewLogin"><a href="/sinegorie/accounts?action=login-view">Войти в аккаунт</a>, чтобы оставить рецензию</p>';
-            echo '<a href="#top" class="updown"></a>';
-            echo '</div>';
-            echo '</section>';
-            echo '</main>';
-            exit;
-        }
-        ?>
-        <h3>Добавить рецензию</h3>
-       <form action="/sinegorie/reviews/index.php" method="POST" class="review-form">
-            <label for="screenname">Пользователь:</label><br>
-            <input name="screenname" id="screenname" readonly value="<?php echo $_SESSION['clientData']['clientLogin']; ?> "><br>
-            <label for="reviewText">Текст Рецензии: </label><br>
-            <textarea name="reviewText" id="reviewText" required></textarea><br>
-            <div class="flexy">
-            <input type="submit" name="submit" id="review-submit" value="Опубликовать">
-            <a href="#top" class="updown"></a>
-            </div>
-            <input type="hidden" name="action" value="newReview">
-            <input type="hidden" name="clientId" value="<?php 
-            if (isset($_SESSION['clientData']['clientId'])) {echo $_SESSION['clientData']['clientId'];} 
-            elseif (isset($clientId)) {echo $clientId;} ?>">
-            <input type="hidden" name="poemId" value="<?php if (isset($poemId)) {echo $poemId;} ?>">
-        </form>
-        </section>
+                <section class="review" id="review">
+                    <h2>Рецензии</h2>
+                    <?php
+                    if (isset($msgNoReviews)) {
+                        echo $msgNoReviews;
+                    }
+                    if (isset($displayReviews)) {
+                        echo $displayReviews;
+                    }
+                    ?>
+                    <?php
+                    if (!isset($_SESSION['loggedin'])) {
+                        echo '<div class="flexyRight">';
+                        echo '<p id="reviewLogin"><a href="/sinegorie/accounts?action=login-view">Войти в аккаунт</a>, чтобы оставить рецензию</p>';
+                        echo '<a href="#top" class="updown"></a>';
+                        echo '</div>';
+                        echo '</section>';
+                        echo '</main>';
+                        exit;
+                    }
+                    ?>
+                      <?php
+                        if ($_SESSION['clientData']['clientLevel'] == 1) {
+                            echo '<p> К сожалению, Вы не можете оставлять рецензии, так как Ваш аккаунт заблокирован.<br>
+                            Вы все еще можете наслаждаться чтением. Спасибо за понимание.<br>
+                            ~ <br>
+                            Если Вы считаете, что Ваш аккаунт был заблокирован по ошибке, Вы можете <a href="#">подать прошение о разблокировке.</a></p>';
+                            
+                            echo '</section>
+                            </main>
+                            </div>
+                            <div class="footer">
+                            <footer>';
+                            ?>
+                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/sinegorie/snippets/footer.php'; ?>
+                            <?php echo '</footer>
+                            </div>
+                            </div>
+                            <script src="/sinegorie/js/hamburger.js"></script>';?>
+                            <?php unset($_SESSION['message']);
+                            exit;}
+                        ?>
+                    <h3>Добавить рецензию</h3>
+                    <form action="/sinegorie/reviews/index.php" method="POST" class="review-form">
+                        <label for="screenname">Пользователь:</label><br>
+                        <input name="screenname" id="screenname" readonly value="<?php echo $_SESSION['clientData']['clientLogin']; ?> "><br>
+                        <label for="reviewText">Текст Рецензии: </label><br>
+                        <textarea name="reviewText" id="reviewText" required></textarea><br>
+                        <div class="flexy">
+                            <input type="submit" name="submit" id="review-submit" value="Опубликовать">
+                            <a href="#top" class="updown"></a>
+                        </div>
+                        <input type="hidden" name="action" value="newReview">
+                        <input type="hidden" name="clientId" value="<?php
+                                                                    if (isset($_SESSION['clientData']['clientId'])) {
+                                                                        echo $_SESSION['clientData']['clientId'];
+                                                                    } elseif (isset($clientId)) {
+                                                                        echo $clientId;
+                                                                    } ?>">
+                        <input type="hidden" name="poemId" value="<?php if (isset($poemId)) {
+                                                                        echo $poemId;
+                                                                    } ?>">
+                    </form>
+                </section>
             </main>
         </div>
         <div class="footer">
@@ -84,6 +116,7 @@
         </div>
     </div>
     <script src="/sinegorie/js/hamburger.js"></script>
+    <?php unset($_SESSION['message'])?>
 </body>
 
 </html>

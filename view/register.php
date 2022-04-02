@@ -47,9 +47,13 @@
                     <label for="clientPassword">Пароль</label><br>
                     <span class="hint">*минимум 8 знаков, включая: 1 цифру, 1 заглавную and 1 спец.символ)</span><br>
                     <input type="password" name="clientPassword" id="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>
+                    <label for="clientPassword">Подтверждение пароля</label><br>
+                    <input type="password" name="clientPassword2" id="clientPassword2" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>
                     <input type="submit" name="submit" class="reg" value="Зарегистрироваться">
                     <input type="hidden" name="action" value="register-procedure">
+                    <input type="hidden" name="clientImage" value="/sinegorie/images/clientAvatars/no-avatar.jpg">
                 </form>
+                            <br><br>
                 <a href="/sinegorie/accounts/index.php?action=login-view">Войти в аккаунт</a>
             </main>
         </div>

@@ -1,5 +1,5 @@
 <?php
-if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 3) {
     header('Location: /sinegorie/');
     exit;
 }

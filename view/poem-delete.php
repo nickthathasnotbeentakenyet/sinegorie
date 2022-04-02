@@ -1,5 +1,5 @@
 <?php
-if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 3) {
     header('Location: /sinegorie/');
     exit;
 }
@@ -36,7 +36,7 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
             </nav>
             <main>
                 <h1><?php if (isset($poemInfo['poemName'])) {
-                        echo "Удалить $poemInfo[poemName]";
+                        echo "Удалить \"$poemInfo[poemName]\"";
                     } elseif (isset($poemName)) {
                         echo "Удалить$poemName";
                     } ?>
@@ -60,12 +60,18 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
                                                                             } elseif (isset($poemInfo['poemText'])) {
                                                                                 echo $poemInfo['poemText'];
                                                                             } ?></textarea><br>
+                                                                            <label for="poemAuthor">Автор</label><br>
+                        <input type="text" name="poemAuthor" id="poemAuthor" <?php if (isset($poemAuthor)) {
+                                                                                echo "value='$poemAuthor'";
+                                                                            } elseif (isset($poemInfo['poemAuthor'])) {
+                                                                                echo "value='$poemInfo[poemAuthor]'";
+                                                                            } ?> readonly><br>
                         <label for="poemDate">Дата написания</label><br>
-                        <input type="text" name="poemDate" id="poemDate" readonly<?php if (isset($poemDate)) {
-                                                                                        echo $poemDate;
+                        <input type="text" name="poemDate" id="poemDate" <?php if (isset($poemDate)) {
+                                                                                        echo  "value='$poemDate'";
                                                                                     } elseif (isset($poemInfo['poemDate'])) {
-                                                                                        echo $poemInfo['poemDate'];
-                                                                                    } ?>><br>
+                                                                                        echo  "value='$poemInfo[poemDate]'";
+                                                                                    } ?>readonly><br>
                         <label for="poemImage">Изображение</label><br>
                         <input type="text" name="poemImage" id="poemImage" <?php if (isset($poemImage)) {
                                                                                 echo "value='$poemImage'";

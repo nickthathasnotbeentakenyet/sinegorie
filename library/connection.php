@@ -5,7 +5,7 @@
 
 function sinegorieConnect()
 {
-    $server = 'localhost';
+    $server = '192.168.0.107';
     $dbname = 'sinegorie';
     $username = 'iClient';
     $password = 'bE_-@Ztm]hB!2Kac';
