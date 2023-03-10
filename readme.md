@@ -1,6 +1,3 @@
-# Design
-- Designed and Developed by: warning
-
-# Sinegorie
+### Sinegorie
 - A poetry website
 
